@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Barry-Callebaut</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <main>
+        <div class="header">
+            <h1>Barry-Callebaut</h1>
+            <div class="up">
+                <img src="" alt="">
+                <h2>NAME USER</h2>
+            </div>
+    {% if request.user.is_authenticated %}
+        <div class="down">
+            <p><a href="">telecharger</a></p>
+            <p><a href="">telecharger</a></p>
+            <p><a href="">telecharger</a></p>
+            <p><a href="">telecharger</a></p>
+            <p><a href="{% url 'logout' %}" id="LienDeconnecter">Se deconnecter</a></p>
+        </div>
+    {% endif %}
+            
+    
+        </div>
+
+        <div class="right">
+
+            {% block content %}{% endblock content %}
+
+        </div>
+    
+        
+    </main>
+</body>
+</html>
